@@ -1,0 +1,67 @@
+# NevusAnalyzer - Игнорируемые файлы
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Данные
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Модели
+models/saved_models/*
+!models/saved_models/.gitkeep
+models/training/logs_*
+models/training/training_log_*.csv
+models/training/training_history_*.png
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Kaggle credentials
+.kaggle/
+
+# TensorBoard
+events.out.tfevents.*
+
+# Temporary files
+*.tmp
+*.bak
+*.log
