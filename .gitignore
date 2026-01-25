@@ -39,13 +39,6 @@ data/raw/*.csv
 *.zip
 *.tar.gz
 
-# Models (keep only structure)
-models/versions/*.h5
-models/versions/*.json
-models/plots/*.png
-models/*.h5
-models/*.keras
-!models/best_hparams.json
 
 # Uploads
 static/uploads/*

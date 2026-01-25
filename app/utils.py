@@ -13,7 +13,7 @@ def allowed_file(filename):
     """Check if file extension is allowed"""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-def preprocess_image(image_path, target_size=(50, 50)):
+def preprocess_image(image_path, target_size=(75, 75)):
     """
     Preprocess image for model inference
     

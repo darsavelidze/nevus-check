@@ -28,7 +28,7 @@ class SkinLesionModel:
         self.model = None
         self.load_model()
     
-    def build_model_architecture(self, input_shape=(50, 50, 3), num_classes=7):
+    def build_model_architecture(self, input_shape=None, num_classes=7):
         """Build model architecture from hyperparameters"""
         hparams_path = os.path.join(self.model_dir, 'best_hparams.json')
         
@@ -37,6 +37,23 @@ class SkinLesionModel:
         
         with open(hparams_path, 'r') as f:
             hparams = json.load(f)
+        
+        # Try to get image_size from latest model metadata
+        if input_shape is None:
+            img_size = 75  # Default
+            versions_dir = os.path.join(self.model_dir, 'versions')
+            metadata_files = [f for f in os.listdir(versions_dir) if f.endswith('_metadata.json')]
+            if metadata_files:
+                # Get the most recent metadata file
+                latest_metadata = sorted(metadata_files)[-1]
+                metadata_path = os.path.join(versions_dir, latest_metadata)
+                try:
+                    with open(metadata_path, 'r') as f:
+                        metadata = json.load(f)
+                        img_size = metadata.get('config', {}).get('image_size', 75)
+                except:
+                    pass
+            input_shape = (img_size, img_size, 3)
         
         filters = hparams['filters']
         dense_units = hparams['dense_units']

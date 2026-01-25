@@ -1,0 +1,32 @@
+{
+  "version": "model_v20260125_234250_acc89.2_f189.6",
+  "timestamp": "20260125_234250",
+  "hyperparameters": {
+    "filters": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "dense_units": [
+      256,
+      128
+    ],
+    "dropout": 0.25,
+    "learning_rate": 0.0001,
+    "batch_size": 64
+  },
+  "metrics": {
+    "accuracy": 0.8917652072014488,
+    "dice": 0.8904968923873625,
+    "sensitivity": 0.8917652072014489,
+    "specificity": 0.9819608678669082,
+    "precision": 0.9006937256751303,
+    "f1": 0.8962072292643515
+  },
+  "config": {
+    "image_size": 75,
+    "epochs": 100,
+    "batch_size": 64
+  }
+}
