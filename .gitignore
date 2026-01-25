@@ -1,5 +1,3 @@
-# NevusAnalyzer - Игнорируемые файлы
-
 # Python
 __pycache__/
 *.py[cod]
@@ -8,7 +6,6 @@ __pycache__/
 .Python
 env/
 venv/
-.venv/
 ENV/
 build/
 develop-eggs/
@@ -28,40 +25,47 @@ wheels/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-*.ipynb
 
-# Данные
-data/raw/*
-!data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
-
-# Модели
-models/saved_models/*
-!models/saved_models/.gitkeep
-models/training/logs_*
-models/training/training_log_*.csv
-models/training/training_history_*.png
-
-# IDE
-.vscode/
+# PyCharm
 .idea/
+
+# VSCode
+.vscode/
+
+# Data
+data/raw/HAM10000_images_part_1/
+data/raw/HAM10000_images_part_2/
+data/raw/*.csv
+*.zip
+*.tar.gz
+
+# Models (keep only structure)
+models/versions/*.h5
+models/versions/*.json
+models/plots/*.png
+models/*.h5
+models/*.keras
+!models/best_hparams.json
+
+# Uploads
+static/uploads/*
+!static/uploads/.gitkeep
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
 *.swp
 *.swo
 *~
 
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Kaggle credentials
-.kaggle/
-
-# TensorBoard
-events.out.tfevents.*
-
 # Temporary files
 *.tmp
-*.bak
-*.log
+temp/
+tmp/
+
+# Environment
+.env
+.env.local

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализатор кожных новообразований</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 Анализатор кожных новообразований</h1>
+        <p class="subtitle">Загрузите изображение для анализа с помощью нейронной сети</p>
+
+        <div class="warning">
+            <strong>⚠️ Важно:</strong>
+            Данное приложение предназначено только для образовательных целей. Результаты не являются медицинским диагнозом. При обнаружении подозрительных образований обратитесь к врачу-дерматологу.
+        </div>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📸</div>
+            <div class="upload-text">Нажмите или перетащите изображение</div>
+            <div class="upload-hint">Форматы: JPG, PNG (макс. 16 МБ)</div>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
+
+        <div class="preview-container" id="previewContainer">
+            <img id="previewImage" class="preview-image" alt="Preview">
+            <br><br>
+            <button class="btn" id="analyzeBtn">Анализировать</button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Анализ изображения...</p>
+        </div>
+
+        <div class="error" id="error"></div>
+
+        <div class="results" id="results">
+            <div class="result-card">
+                <div class="result-title">Результат анализа:</div>
+                <div class="result-class" id="resultClass"></div>
+                <div id="resultDescription" style="margin-bottom: 10px;"></div>
+                <div class="result-confidence" id="resultConfidence"></div>
+            </div>
+
+            <div class="all-predictions">
+                <h3>Подробные результаты:</h3>
+                <div id="allPredictions"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
